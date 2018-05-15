@@ -1,5 +1,5 @@
 # celepar-microservices-grpc
-Basic Microservices lib, working with gRPC and Redis.
+Basic Microservices lib, working with ZeroMQ and Redis.
 
 The idea is take advantage of Redis pub/sub and sets to find available servers and connect directly to them.
 If you add more services, it will be detected automatically and client will call them.
@@ -8,7 +8,7 @@ If one or more service fall, the client will try to another.
 
 server.js
 ```javascript
-const { Server } = require('celepar-microservices-grpc')
+const { Server } = require('celepar-microservices-zeromq')
 
 const srv = new Server({
     package: 'helloworld',
@@ -60,7 +60,7 @@ srv.use(new Test()).start()
 client.js
 ```javascript
 
-const { Client } = require('celepar-microservices-grpc')
+const { Client } = require('celepar-microservices-zeromq')
 
 let cli = new Client({
     services: [{ // You could add more services from the same proto file
