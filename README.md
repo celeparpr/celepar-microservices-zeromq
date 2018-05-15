@@ -1,4 +1,4 @@
-# celepar-microservices-grpc
+# celepar-microservices-zeromq
 Basic Microservices lib, working with ZeroMQ and Redis.
 
 The idea is take advantage of Redis pub/sub and sets to find available servers and connect directly to them.
